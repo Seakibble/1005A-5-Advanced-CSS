@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #aaa;
+
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+
+    font-size: 18px;
+}
+
+/* List selectors to apply a rule to multiple selectors at once. */
+h1, h2, h3, h4 {
+    font-family: 'Merriweather', 'Times New Roman', Times, serif;
+}
+
+p {
+    margin: 2em 0;
+}
+
+/* Target elements that follow other elements using + */
+h1 + p, 
+h2 + p, 
+h4 + p, 
+h3 + p {
+    margin-top: 0;
+}
+
+.card {
+    background: lightgreen;
+    border-radius: 10px;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+.card b {
+    color: darkgreen;
+}
+
+/* target tags inside other tags by listing them without commas */
+/* .card p {
+    margin: 0;
+} */
+
+/* > means "directly inside of". So paragraph tags directly inside of any tag with .card */
+.card > p {
+    margin: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 40px;
+    gap: 40px;
+}
+
+/* :first-child targets the very first element inside a container */
+/* .grid > div:first-child {
+    grid-column: span 2;
+} */
+
+.span-two {
+    grid-column: span 2;
+}
+
+.table {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
+
+}
+
+/* :nth-child() is used to apply a rule to elements based on which child they are in their container */
+table tr:nth-child(2n) {
+    background-color: #eee;
+}
+
+.table :nth-child(2n+1) {
+    background-color: #eee;
+}
